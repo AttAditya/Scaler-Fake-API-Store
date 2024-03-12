@@ -9,8 +9,8 @@ import java.util.List;
 @Service
 public class CartService {
 
-    private RestTemplate restTemplate;
-    private String fsaURL;
+    private final RestTemplate restTemplate;
+    private final String fsaURL;
 
     public CartService() {
         this.restTemplate = new RestTemplate();
@@ -28,13 +28,8 @@ public class CartService {
         return response;
     }
 
-    public List<String> getAllCategories() {
-        List<String> response = restTemplate.getForObject(fsaURL + "/carts/categories", List.class);
-        return response;
-    }
-
-    public List<CartModel> getCategoryCarts(String categoryName) {
-        List<CartModel> response = restTemplate.getForObject(fsaURL + "/carts/category/" + categoryName, List.class);
+    public List<CartModel> getUserCarts(Long userId) {
+        List<CartModel> response = restTemplate.getForObject(fsaURL + "/carts/user/" + userId, List.class);
         return response;
     }
 

@@ -24,6 +24,11 @@ public class CartController {
         return cartService.getSpecificCart(cartId);
     }
 
+    @GetMapping("/carts/user/{userId}")
+    public List<CartModel> getUserCarts(@PathVariable("userId") Long userId) {
+        return cartService.getUserCarts(userId);
+    }
+
     @PostMapping("/carts")
     public CartModel addNewCart(@RequestBody CartModel cartModel) {
         return cartService.addNewCart(cartModel);
