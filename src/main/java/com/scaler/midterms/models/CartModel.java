@@ -3,7 +3,6 @@ package com.scaler.midterms.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -11,6 +10,6 @@ import java.util.List;
 public class CartModel {
     private Long id;
     private Long userId;
-    private Date date;
+    private String date;
     private List<CartProduct> products;
 }

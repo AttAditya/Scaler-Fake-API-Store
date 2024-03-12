@@ -23,6 +23,11 @@ public class CartService {
         return response;
     }
 
+    public List<CartModel> getAllCartsByDates(String startdate, String enddate) {
+        List<CartModel> response = restTemplate.getForObject(fsaURL + "/carts?startdate=" + startdate + "&enddate=" + enddate, List.class);
+        return response;
+    }
+
     public CartModel getSpecificCart(Long cartId) {
         CartModel response = restTemplate.getForObject(fsaURL + "/carts/" + cartId, CartModel.class);
         return response;

@@ -15,8 +15,12 @@ public class CartController {
     }
 
     @GetMapping("/carts")
-    public List<CartModel> getAllCarts() {
-        return cartService.getAllCarts();
+    public List<CartModel> getAllCarts(@RequestParam(value = "startdate", required = false, defaultValue = "") String startdate, @RequestParam(value = "enddate", required = false, defaultValue = "") String enddate) {
+        if (startdate.isEmpty() || enddate.isEmpty()) {
+            return cartService.getAllCarts();
+        }
+
+        return cartService.getAllCartsByDates(startdate, enddate);
     }
 
     @GetMapping("/carts/{cartId}")
