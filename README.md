@@ -1,3 +1,9 @@
+# Run
+
+> To test, it is at last of this file...
+
+To run application, `src/main/java/com/scaler/midterms/MidtermsApplication.java`
+
 # Documentation
 
 ## Test Endpoints
