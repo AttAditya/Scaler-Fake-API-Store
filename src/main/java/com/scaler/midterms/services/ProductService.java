@@ -1,18 +1,16 @@
 package com.scaler.midterms.services;
 
 import com.scaler.midterms.models.ProductModel;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ProductService {
 
-    private RestTemplate restTemplate;
-    private String fsaURL;
+    private final RestTemplate restTemplate;
+    private final String fsaURL;
 
     public ProductService() {
         this.restTemplate = new RestTemplate();
