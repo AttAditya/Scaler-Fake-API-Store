@@ -335,3 +335,7 @@ Deletes the cart with id `cartId` and returns it.
 }
 ```
 
+# Testing
+
+To test, run `src/test/java/com/scaler/midterms/MidtermsApplicationTests.java` 
+
